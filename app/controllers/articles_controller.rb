@@ -39,11 +39,11 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @article.destroy
 
-    redirect_to root_path, status: :see_other 
+    redirect_to root_path, status: :see_other
 end
 
   private
     def article_params
-      params.require(:article).permit(:tittle, :body)
+      params.require(:article).permit(:tittle, :body, :status)
     end
 end
